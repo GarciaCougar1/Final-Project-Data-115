@@ -1,0 +1,134 @@
+---
+title: "HW 8"
+author: "Isaias G"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+Problem 1 is associated with your personal dataset project. Submit your work for all problems in a single .pdf compiled with knitr. The Homework Data folder has a starting .Rmd template with spaces for you to fill in your answers to the questions.
+
+1.	This question is related to your personal data set project. The goal for the end of this week is to have at least one column of data uploaded as a .csv to your github repository.
+
+(a)	Access at least one column of data (with at least 5 rows), either from one of the sources you identified in problem #1 of your week 7 assignment or another source relevant to your proposed topic.
+
+```{r column data}
+
+library(tidyverse)
+
+fy22useofforce <- read_csv("use-of-force-incidents-officer-agent-fy19-fy22.csv")
+
+fy22useofforce %>%
+  select(Component) %>%
+  head()
+  
+
+
+```
+
+
+(b)	Write a brief paragraph describing why you decided on this data source, where the data comes from originally, how the chosen data will help you answer a question you are interested in (not necessarily one of the questions you wrote about in Week #7 but hopefully something related), and any processing steps you applied to the data. Submit the paragraph as a response to this question - you do not have to post it to github.
+
+This data was chosen due to my upbringing in South Texas close to the border and being witness to immigrants dying in the railroad tracks and in the bush.  I am also a first generation immigrant as I was born in Mexico to a US Michigan born US citizen and a Mexican national.  All my siblings, older and younger where born in the US.  This data comes from the CBP.GOV website. This will help me figure out how encounters correlate with migrant deaths per region.
+
+(c)	Upload the data column to your github repo from this project (from week 5) and submit the url as a response to this problem.
+
+https://github.com/GarciaCougar1/Final-Project-Data-115-/blob/main/Column%20Tucson%20Area%20Deaths
+
+2.	In your own words, please write brief answers to the following:
+(a)	What are the assumptions for linear regression from a statistical perspective?
+
+1.Linearity-Relationship between variable tha are independent and dependent are linear.
+
+2.Independence Homoscedacity- Observations are independent of each other.
+
+3.Normality- Errors follow a normal distribution.
+
+4.No Multicollinearity-Independent variable are not highly correlated with each other.
+
+5.No endogeneity-Independent variables and errors have no relationship.
+
+(b)	What is the definition of a residual?
+
+The difference between the actual value and the predicted value on a regression line.
+
+
+(c)	What is the coefficient of determination?
+
+
+
+
+(d)	What is the difference between the total sum of squares and the model sum of squares?
+
+(e)	What do the slope and intercept of the best fit line tell us about the data?
+
+2.	In your own words, please write brief answers to the following:
+(a)	What are the assumptions for linear regression from a statistical perspective?
+(b)	What is the definition of a residual?
+(c)	What is the coefficient of determination?
+(d)	What is the difference between the total sum of squares and the model sum of squares?
+(e)	What do the slope and intercept of the best fit line tell us about the data?
+
+
+3.	This problem checks your understanding of linear regression and diagnosis of these fits. Start by loading in the education income.csv file as a dataframe.
+
+```{r}
+
+InStateTuition <- read_csv("InStateTuition.csv")
+
+
+```
+
+(a)	Make a scatterplot of the percentage of BS holders by state against the median household (HH) income.
+
+(b)	Based on this plot, do you think linear regression is appropriate to attempt?
+(c)	Fit a simple linear model to this pair of columns.
+
+(d)	Overlay the best fit line on the scatterplot from part (a).
+(e)	Write the linear equation estimated by your fit.
+(f)	Write the coefficient of determination for your fit.
+(g)	Make a QQ plot of the residuals to check if they are normally distributed. What do you conclude?
+(h)	Plot the residuals against the fitted values. Do you notice anything concerning?
+(i)	Choose two other columns from the dataframe and repeat steps (a)-(h).
+(j)	Do you observe any differences in the main results for these new columns?
+
+
+4.	Read the following exploratory data analysis project about traffic and COVID: How Political is the Spread of COVID-19 in the United States? An Analysis using Transportation and Weather Data and write a paragraph summarizing your responses to the following questions.
+•	What research question is being addressed in this piece?
+ 
+
+
+•	Can you tell where the underlying data came from?
+•	Is the data publicly available? Do you think you could reproduce the cleaning and processing steps to regenerate the data set?
+•	What technique that we have discussed in our class do the authors use to evaluate the data?
+•	What do you think about the visualizations and examples in this piece?
+•	Which of the correlation heatmaps do you think is most effective or useful?
+•	Do you think the clusters of states in the Analysis Results section offer a fair comparison?
+•	The authors chose to use 2016 Presidential election results to divide up the states into red and blue. Does this seem like a reasonable choice? What else might they have used?
+•	How strong is the final evidence the authors provide for their conclusions?
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
