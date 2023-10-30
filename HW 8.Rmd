@@ -25,8 +25,12 @@ fy22useofforce <- read_csv("use-of-force-incidents-officer-agent-fy19-fy22.csv")
 fy22useofforce %>%
   select(Component) %>%
   head()
-  
 
+full_component_column <- fy22useofforce %>%
+  select(Component)
+
+writeLines(full_component_column, "Component_column.txt")
+  
 
 ```
 
